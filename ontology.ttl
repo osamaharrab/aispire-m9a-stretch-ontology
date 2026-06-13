@@ -1,0 +1,63 @@
+@prefix : <https://example.org/aispire/boardgames#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+:BoardGame a rdfs:Class ;
+    skos:prefLabel "Board game" ;
+    skos:altLabel "Tabletop game" .
+
+:CooperativeGame a rdfs:Class ;
+    rdfs:subClassOf :BoardGame .
+
+:CompetitiveGame a rdfs:Class ;
+    rdfs:subClassOf :BoardGame .
+
+:Designer a rdfs:Class .
+:Mechanic a rdfs:Class .
+
+:Pandemic a :CooperativeGame ;
+    skos:prefLabel "Pandemic" ;
+    :designedBy :MattLeacock ;
+    :usesMechanic :SetCollection ;
+    :playerCount "2-4" ;
+    :hasSoloMode true .
+
+:TheCrew a :CooperativeGame ;
+    skos:prefLabel "The Crew: The Quest for Planet Nine" ;
+    skos:altLabel "The Crew" ;
+    :designedBy :ThomasSing ;
+    :usesMechanic :TrickTaking ;
+    :playerCount "3-5" .
+
+:TicketToRide a :CompetitiveGame ;
+    skos:prefLabel "Ticket to Ride" ;
+    :designedBy :AlanMoon ;
+    :usesMechanic :SetCollection ;
+    :playerCount "2-5" .
+
+:Scout a :CompetitiveGame ;
+    skos:prefLabel "SCOUT" ;
+    skos:altLabel "Scout" ;
+    :designedBy :KeiKajino ;
+    :usesMechanic :TrickTaking ;
+    :playerCount "2-5" .
+
+:MattLeacock a :Designer ;
+    skos:prefLabel "Matt Leacock" .
+
+:ThomasSing a :Designer ;
+    skos:prefLabel "Thomas Sing" .
+
+:AlanMoon a :Designer ;
+    skos:prefLabel "Alan R. Moon" .
+
+:KeiKajino a :Designer ;
+    skos:prefLabel "Kei Kajino" .
+
+:SetCollection a :Mechanic ;
+    skos:prefLabel "Set collection" .
+
+:TrickTaking a :Mechanic ;
+    skos:prefLabel "Trick-taking" ;
+    skos:altLabel "Trick taking" .
